@@ -1,16 +1,18 @@
-const ACCESSORY_PRICE = 9.99;
+const CHOCOLATE_PRICE = 9.99;
 
-var bank_balance = 302.13;
-var amount = 99.99;
+const prompt = require("prompt-sync")({ sigint: true });
 
-amount = amount*2;
+var bank_balance = prompt("Your card balance: ");
+var croissant_cost = 99.99;
 
-if (amount<bank_balance) {
-	console.log("I'll take the accessory!");
-	amount = amount + ACCESSORY_PRICE;
+croissant_cost = croissant_cost * 2 // Croissant cost inflated by 100% in 2024
+
+if (croissant_cost + CHOCOLATE_PRICE < bank_balance) {
+	console.log("I'll take the croissant with chocolate!");
+	croissant_cost = croissant_cost + CHOCOLATE_PRICE;
 }
 else {
-	console.log("No, thanks.")
+	console.log("No, thanks, I'm broke.")
 }
 
 
