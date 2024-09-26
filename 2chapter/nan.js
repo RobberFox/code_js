@@ -1,7 +1,13 @@
+// if (!Number.isNaN) {
+// 	Number.isNaN = function(n) {
+// 		return (typeof n === "number" && window.isNaN(n));
+// 	}
+// }
+
 if (!Number.isNaN) {
 	Number.isNaN = function(n) {
-		return (typeof n === "number" && window.isNaN(n));
-	}
+		return n !== n;
+	};
 }
 
 var a = 2 / "foo";
